@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 def is_even_len(string: str) -> bool:
-    return bool(len(string)%2)
+    return len(string)%2==0
 
 
 def remove_third_char(string: str) -> str:
@@ -11,15 +10,21 @@ def remove_third_char(string: str) -> str:
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    return ""
+    ocidx= string.find(old_char)
+    return string[0:ocidx] + new_char + string[ocidx+1:]
 
 
 def get_nb_char(string: str, char: str) -> int:
-    return 0
+    nchar=0
+    for c in string:
+        if c is char:
+            nchar+=1
+
+    return nchar
 
 
 def get_nb_words(sentence: str) -> int:
-    return 0
+    return len(str.split(sentence, " "))
 
 
 def main() -> None:
